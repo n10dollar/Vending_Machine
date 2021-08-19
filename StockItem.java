@@ -1,30 +1,28 @@
+package VendingMachineFinal;
+
 public class StockItem {
 
+    private String name;
+    private int quantity;
     private double cost;
-    private String snackType;
-    private String snackName;
 
-    StockItem(double cost, String snackType, String snackName) {
+    StockItem(String name, int quantity, double cost) {
+        this.name=name;
+        this.quantity=quantity;
         this.cost=cost;
-        this.snackType=snackType;
-        this.snackName=snackName;
     }
 
-    public double getCost() {
-        return cost;
-    }
+    public String getName() { return name; }
+    public int getQuantity() { return quantity; }
+    public double getCost() { return cost; }
 
-    public String getSnackType() {
-        return snackType;
-    }
-
-    public String getSnackName() {
-        return snackName;
-    }
+    public void increaseQuantityBy(int quantityIncrease) { quantity += quantityIncrease; }
+    public void decreaseQuantityBy(int quantityDecrease) { quantity -= quantityDecrease; }
 
     @Override
     public String toString() {
-        return String.format(snackType + " : " + snackName + " : $" + cost);
+        return "name: " + name + "\n" +
+               "quantity: " + quantity + "\n" +
+               "cost per: " + cost + "\n";
     }
-
 }

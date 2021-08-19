@@ -1,18 +1,29 @@
+package VendingMachineFinal;
+
+import VendingMachineFinal.SoldItem;
+
 public class Receipt {
 
-    private double cost;
-    private String snackType;
-    private String snackName;
+    private String itemName;
+    private int quantity;
+    private double totalDue;
+    private int customerID;
 
-    Receipt(double cost, String snackType, String snackName) {
-        this.cost=cost;
-        this.snackType=snackType;
-        this.snackName=snackName;
+    Receipt(SoldItem soldItem, int customerID) {
+        itemName=soldItem.getName();
+        quantity=soldItem.getQuantity();
+        totalDue=soldItem.getCost()*quantity;
+        this.customerID = customerID;
     }
+
+    public int getCustomerID() { return customerID; }
+
 
     @Override
     public String toString() {
-        return String.format("Bought: " + snackType + " called " + snackName + "\n" + "Total: $" + cost);
+        return "Customer ID: " + customerID + "\n" +
+                "The bill is: " + "\n" +
+                "$" + totalDue + " for " +
+                quantity + " " + itemName + "\n";
     }
-
 }
