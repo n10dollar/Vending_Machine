@@ -1,32 +1,42 @@
+package VendingMachineFinal;
+
 public class Driver {
+    public static void main(String[] args){
+        Store store = new Store();
 
-    public static void main(String[] args) {
+        store.addVendingMachine("Drinks");
+        store.addVendingMachine("Snacks");
 
-        VendingMachine vendingMachine = new VendingMachine("Vending Machine", 10);
+        StockItem candies = new StockItem("Candies", 150, 1);
+        StockItem candies1 = new StockItem("Candies", 150, 1);
+        StockItem water = new StockItem("Water", 200, 5);
+        StockItem cookies = new StockItem("Cookies", 150, 3);
+        StockItem soda = new StockItem("Soda", 100, 10);
 
-        StockItem candy = new StockItem(.5, "candy", "Snickers");
-        StockItem cookie = new StockItem(1, "cookie", "Famous Amos");
-        StockItem cheapWater = new StockItem(1.5, "water", "Dasani");
-        StockItem expensiveWater = new StockItem(5, "water", "Fiji");
+        store.addSupply(candies);
+//        store.addSupply(candies1);
+//        store.addSupply(water);
+//        store.addSupply(cookies);
+//        store.addSupply(soda);
 
-        vendingMachine.addSupply(candy);
-        vendingMachine.addSupply(cookie);
-        vendingMachine.addSupply(cheapWater);
-        vendingMachine.addSupply(expensiveWater);
+//        Customer Bob = new Customer("Bob");
+//        int bobCID = 0;
 
-        vendingMachine.buyCandy("Snickers");
-        vendingMachine.getReceipt();
+//        bobCID = store.addCustomer(Bob);
+//        store.buy(bobCID, "Water", 2);
+//        store.getReceipts(bobCID);
 
-        vendingMachine.buyCookies("Famous Amos");
-        vendingMachine.getReceipt();
+//        Customer Dan = new Customer("Dan");
+//        int danCID = 0;
+//
+//        danCID = store.addCustomer(Dan);
+//        store.buy(danCID, "Water", 1);
+//        store.buy(danCID, "Soda", 2);
+//        store.buy(danCID, "Cookies", 3);
+//        store.buy(danCID, "Candies", 4);
+//        store.getReceipts(danCID);
 
-        vendingMachine.buyWater("Dasani");
-        vendingMachine.getReceipt();
-
-        vendingMachine.showStockSupplies();
-        vendingMachine.showSoldItems();
-        vendingMachine.showAllReceipts();
+        store.showStockSupplies();
 
     }
-
 }
